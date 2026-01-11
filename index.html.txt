@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luana de Brito | Portfolio Infra & Cloud</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="container header-content">
+            <div class="profile-text">
+                <h1>LUANA DE BRITO [cite: 1]</h1>
+                <p class="badge">Analista de Monitoramento e Infraestrutura [cite: 1]</p>
+                <div class="contact-tags">
+                    <span><i class="fas fa-envelope"></i> luanasfds@gmail.com [cite: 2]</span>
+                    <span><i class="fas fa-map-marker-alt"></i> Bauru, SP [cite: 1]</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="grid-layout">
+            <div class="glass-card">
+                <i class="fas fa-graduation-cap icon-main"></i>
+                <h3>Educação</h3>
+                <p><strong>Superior em Redes de Computadores</strong> [cite: 4]<br><span>Fatec Bauru</span> [cite: 4]</p>
+                <p><strong>Técnico em Informática</strong><br><span>Etec Bauru</span> [cite: 3]</p>
+            </div>
+
+            <div class="glass-card highlight">
+                <i class="fas fa-cloud icon-main"></i>
+                <h3>Cloud & Backup</h3>
+                <p>Expertise em <strong>Veeam Backup</strong> e Disaster Recovery </p>
+                <p>Monitoramento avançado com <strong>Zabbix & Grafana</strong> </p>
+            </div>
+        </section>
+
+        <section class="experience-section">
+            <h2 class="section-title"><i class="fas fa-briefcase"></i> Experiência Profissional</h2>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <h4>Analista de Monitoramento NOC | LbTech Soluções [cite: 6]</h4>
+                    <span class="date">2022 – 2025 [cite: 6]</span>
+                    <p>Atuação em monitoramento proativo de sistemas críticos e gestão de infraestrutura. [cite: 6]</p>
+                    <div class="skills-pills">
+                        <span>Veeam [cite: 6]</span> <span>Zabbix [cite: 6]</span> <span>Grafana [cite: 6]</span> <span>Linux [cite: 8]</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desenvolvido por Luana de Brito &copy; 2026</p>
+    </footer>
+
+</body>
+</html>

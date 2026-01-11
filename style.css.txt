@@ -1,0 +1,116 @@
+/* Variáveis de Cores */
+:root {
+    --bg-pink: #fff5f7;
+    --main-pink: #ff8fa3;
+    --dark-pink: #d81b60;
+    --text-color: #4a4a4a;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: var(--bg-pink);
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Header com degradê suave */
+header {
+    background: linear-gradient(135deg, #ff8fa3 0%, #ffb3c1 100%);
+    padding: 80px 0 100px;
+    text-align: center;
+    color: white;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 10px; }
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    padding: 5px 20px;
+    border-radius: 30px;
+    font-weight: 300;
+}
+
+/* Grid e Cards Estilo "Glass" */
+.grid-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: -50px; /* Sobe os cards para cima do header */
+}
+
+.glass-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(255, 143, 163, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.glass-card:hover { transform: translateY(-10px); }
+
+.glass-card.highlight {
+    background: var(--dark-pink);
+    color: white;
+}
+
+.icon-main {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: var(--main-pink);
+}
+
+.highlight .icon-main { color: white; }
+
+/* Experiência */
+.section-title {
+    margin: 60px 0 30px;
+    color: var(--dark-pink);
+    font-size: 1.8rem;
+}
+
+.timeline-item {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    border-left: 6px solid var(--main-pink);
+    margin-bottom: 20px;
+}
+
+.skills-pills span {
+    background: var(--bg-pink);
+    color: var(--dark-pink);
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    margin-right: 8px;
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    padding: 50px 0;
+    color: var(--main-pink);
+    font-size: 0.9rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    header { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+}
