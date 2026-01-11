@@ -1,116 +1,168 @@
-/* Variáveis de Cores */
+/* Configurações Gerais */
 :root {
-    --bg-pink: #fff5f7;
-    --main-pink: #ff8fa3;
-    --dark-pink: #d81b60;
-    --text-color: #4a4a4a;
-    --white: #ffffff;
+  --bg-color: #fff5f7;
+  --container-color: #ffffff;
+  --primary-pink: #ff8fa3;
+  --dark-pink: #d81b60;
+  --text-main: #2d3436;
+  --text-secondary: #636e72;
+  --jakarta: "Plus Jakarta Sans", sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--jakarta);
 }
 
 body {
-    background-color: var(--bg-pink);
-    color: var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  overflow-x: hidden;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
-}
-
-/* Header com degradê suave */
-header {
-    background: linear-gradient(135deg, #ff8fa3 0%, #ffb3c1 100%);
-    padding: 80px 0 100px;
-    text-align: center;
-    color: white;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-}
-
-h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 10px; }
-
-.badge {
-    background: rgba(255, 255, 255, 0.2);
-    display: inline-block;
-    padding: 5px 20px;
-    border-radius: 30px;
-    font-weight: 300;
-}
-
-/* Grid e Cards Estilo "Glass" */
 .grid-layout {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-top: -50px; /* Sobe os cards para cima do header */
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-.glass-card {
-    background: var(--white);
-    padding: 40px;
-    border-radius: 25px;
-    text-align: center;
-    box-shadow: 0 15px 35px rgba(255, 143, 163, 0.15);
-    transition: transform 0.3s ease;
+/* Header e Navegação */
+header {
+  padding: 30px 0;
+  background: transparent;
 }
 
-.glass-card:hover { transform: translateY(-10px); }
-
-.glass-card.highlight {
-    background: var(--dark-pink);
-    color: white;
+.logo {
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+  color: var(--dark-pink);
 }
 
-.icon-main {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--main-pink);
+.logo b {
+  color: var(--primary-pink);
 }
 
-.highlight .icon-main { color: white; }
-
-/* Experiência */
-.section-title {
-    margin: 60px 0 30px;
-    color: var(--dark-pink);
-    font-size: 1.8rem;
+/* Secção Home (Destaque) */
+#s-home {
+  padding: 80px 0;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
 }
 
-.timeline-item {
-    background: white;
-    padding: 30px;
-    border-radius: 20px;
-    border-left: 6px solid var(--main-pink);
-    margin-bottom: 20px;
+#home-container-text h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin-bottom: 20px;
+  background: linear-gradient(90deg, var(--dark-pink), var(--primary-pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.skills-pills span {
-    background: var(--bg-pink);
-    color: var(--dark-pink);
-    padding: 5px 15px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    margin-right: 8px;
-    font-weight: 600;
+#home-container-text h2 {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  max-width: 600px;
+  margin-bottom: 40px;
 }
 
-footer {
-    text-align: center;
-    padding: 50px 0;
-    color: var(--main-pink);
-    font-size: 0.9rem;
+.btn-primary {
+  display: inline-block;
+  padding: 15px 35px;
+  background-color: var(--dark-pink);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(216, 27, 96, 0.2);
+}
+
+/* Secção Sobre */
+#s-about {
+  padding: 100px 0;
+  background-color: #fff;
+}
+
+#s-about .grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+}
+
+h2 { color: var(--primary-pink); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; }
+h3 { font-size: 2rem; margin-top: 10px; }
+h4 { font-size: 1.5rem; margin-bottom: 20px; color: var(--dark-pink); }
+
+/* Experiência e Projetos */
+#s-projects { padding: 100px 0; }
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+}
+
+.project {
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid #ffeef1;
+  transition: border-color 0.3s ease;
+}
+
+.project:hover { border-color: var(--primary-pink); }
+
+.tags { display: flex; gap: 10px; margin-top: 15px; }
+.tag {
+  background: var(--bg-color);
+  color: var(--dark-pink);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* FAQ */
+#s-faq { padding: 100px 0; background: white; }
+.faq-grid { margin-top: 40px; }
+.faq-item {
+  padding: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* Botão WhatsApp */
+#whatsapp-floating-button {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+}
+
+#whatsapp-floating-button img { width: 30px; filter: invert(1); }
+
+/* Footer */
+footer { padding: 60px 0; background: #fff; border-top: 1px solid #eee; }
+.social ul { list-style: none; display: flex; gap: 20px; margin-top: 10px; }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    h1 { font-size: 2rem; }
-    header { border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
+  #s-about .grid-layout { grid-template-columns: 1fr; }
+  #home-container-text h1 { font-size: 2.5rem; }
 }
