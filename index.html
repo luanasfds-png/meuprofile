@@ -1,27 +1,254 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfólio | Profissional de TI</title>
 
-    <title>Portfólio Toti</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/src/assets/dataicon.png" />
+  <style>
+    :root {
+      --pink-light: #fff5f7;
+      --pink-medium: #ff8fa3;
+      --pink-dark: #d81b60;
+      --text: #2d3436;
+    }
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <body>
-    <div id="root"></div>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--pink-light);
+      color: var(--text);
+      line-height: 1.6;
+    }
 
-    <!-- Script principal -->
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    .grid-layout {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      padding: 30px 0;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--pink-dark);
+    }
+
+    .logo span {
+      color: var(--pink-medium);
+    }
+
+    #hero {
+      padding: 60px 0;
+    }
+
+    #hero h1 {
+      font-size: clamp(2rem, 8vw, 3.5rem);
+      line-height: 1.1;
+      color: var(--pink-dark);
+      margin-bottom: 20px;
+    }
+
+    .subtitle {
+      max-width: 650px;
+      font-size: 1.2rem;
+      color: #636e72;
+      margin-bottom: 30px;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      padding: 15px 30px;
+      border-radius: 50px;
+      background: var(--pink-dark);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      color: var(--pink-dark);
+      margin-bottom: 30px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin-bottom: 70px;
+    }
+
+    .card {
+      background: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid #ffeef1;
+    }
+
+    .card.highlight {
+      background: var(--pink-dark);
+      color: #fff;
+    }
+
+    .card h3 {
+      font-size: 1.3rem;
+      margin-bottom: 15px;
+    }
+
+    #experience {
+      padding-bottom: 80px;
+    }
+
+    .timeline-item {
+      background: #fff;
+      padding: 25px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .tags span {
+      display: inline-block;
+      margin: 6px 6px 0 0;
+      padding: 6px 14px;
+      border-radius: 10px;
+      background: var(--pink-light);
+      color: var(--pink-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #636e72;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 600px) {
+      #hero {
+        text-align: center;
+        padding: 40px 0;
+      }
+
+      .subtitle {
+        margin: 0 auto 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="grid-layout">
+    <div class="logo">Portfólio <span>TI</span></div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="grid-layout">
+      <h1>
+        Profissional de <br />
+        <span style="color: var(--pink-medium);">Tecnologia da Informação</span>
+      </h1>
+
+      <p class="subtitle">
+        Profissional de TI graduada em Redes de Computadores, com mais de 5 anos de
+        experiência em infraestrutura, monitoramento de sistemas, segurança da
+        informação, backup e suporte técnico. Atuação focada em confiabilidade,
+        proteção de dados e continuidade dos serviços.
+      </p>
+
+      <a href="#qualifications" class="btn-primary">Minhas qualificações</a>
+    </section>
+
+    <!-- QUALIFICAÇÕES -->
+    <section id="qualifications" class="grid-layout">
+      <h2 class="section-title">Qualificações & Conhecimentos</h2>
+
+      <div class="info-grid">
+        <div class="card">
+          <h3>🎓 Formação</h3>
+          <p>
+            Graduada em <b>Redes de Computadores</b>, com sólida base em
+            infraestrutura, redes corporativas, sistemas operacionais e ambientes
+            de TI.
+          </p>
+        </div>
+
+        <div class="card">
+          <h3>🔐 Segurança da Informação</h3>
+          <p>
+            Conhecimentos em <b>ISO 27001</b> e <b>LGPD</b>, aplicando boas práticas
+            de segurança, proteção de dados, controle de acessos e compliance.
+          </p>
+        </div>
+
+        <div class="card highlight">
+          <h3>💾 Backup & Continuidade</h3>
+          <p>
+            Experiência com <b>backup, restore e disaster recovery</b>, garantindo
+            disponibilidade, integridade e recuperação de dados críticos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIÊNCIA -->
+    <section id="experience" class="grid-layout">
+      <h2 class="section-title">Experiência Profissional</h2>
+
+      <div class="timeline-item">
+        <h3>Infraestrutura, Monitoramento & Suporte</h3>
+        <p>
+          Atuação em ambientes corporativos com monitoramento proativo de sistemas,
+          análise de alertas, resolução de incidentes, suporte técnico nível 1 e 2
+          e administração de ambientes Windows e Linux.
+        </p>
+
+        <div class="tags">
+          <span>ISO 27001</span>
+          <span>LGPD</span>
+          <span>Backup & Recovery</span>
+          <span>Infraestrutura</span>
+          <span>Monitoramento</span>
+          <span>Redes</span>
+          <span>Windows</span>
+          <span>Linux</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- PERFIL -->
+    <section class="grid-layout">
+      <div class="card">
+        <h3>Perfil Profissional</h3>
+        <p>
+          Profissional comprometida com boas práticas de TI, segurança da
+          informação e melhoria contínua dos ambientes tecnológicos. Interesse
+          constante em evolução profissional, aprendizado e excelência
+          operacional.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 • Portfólio Profissional de TI
+  </footer>
+
+</body>
 </html>
