@@ -1,56 +1,67 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Luana de Brito | Profissional de TI</title>
-
-  <!-- Fonte -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="estilo.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio | Especialista em TI</title>
+    <link rel="stylesheet" href="estilo.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
-
 <body>
-  <div class="container">
-    <h1>Profissional de Tecnologia da Informação</h1>
 
-    <p>
-      Graduada em Redes de Computadores pela FATEC Bauru.
-      Vivência em Datacenter, suporte ao usuário em ambientes Linux e Windows,
-      conhecimento em redes, servidores e infraestrutura de TI.
-    </p>
+    <header>
+        <div class="container">
+            <h1>Profissional de Tecnologia da Informação</h1>
+            <p class="subtitle">Graduada em Redes de Computadores • Especialista em Infraestrutura</p>
+        </div>
+    </header>
 
-    <h2>Qualificações</h2>
+    <main class="container">
+        <section class="about">
+            <p>Atuação focada em <strong>Datacenter</strong>, suporte avançado em ambientes <strong>Linux/Windows</strong> e gestão de infraestrutura de redes. Experiência técnica consolidada pela FATEC Bauru.</p>
+        </section>
 
-    <div class="cards">
-      <div class="card">
-        <strong>🎓 Formação</strong>
-        <p>Graduação em Redes de Computadores – FATEC Bauru</p>
-        <p>Técnico em TI – ETEC Bauru</p>
-      </div>
+        <div class="grid">
+            <div class="card">
+                <i class="fas fa-user-graduate icon"></i>
+                <h3>Formação</h3>
+                <ul>
+                    <li><strong>Graduação:</strong> Redes de Computadores – FATEC Bauru</li>
+                    <li><strong>Técnico:</strong> TI – ETEC Bauru</li>
+                </ul>
+            </div>
 
-      <div class="card">
-        <strong>🔐 Segurança</strong>
-        <p>ISO 27001 e LGPD</p>
-      </div>
+            <div class="card">
+                <i class="fas fa-shield-alt icon"></i>
+                <h3>Segurança</h3>
+                <p>Conformidade com <strong>LGPD</strong> e fundamentos da <strong>ISO 27001</strong>.</p>
+            </div>
 
-      <div class="card">
-        <strong>💾 Backup</strong>
-        <p>Backup, Restore e Disaster Recovery</p>
-      </div>
+            <div class="card">
+                <i class="fas fa-database icon"></i>
+                <h3>Disponibilidade</h3>
+                <p>Gestão de Backup, Restore e planos de <strong>Disaster Recovery</strong>.</p>
+            </div>
 
-      <div class="card">
-        <strong>🖥️ Sistemas</strong>
-        <p>Windows • Linux • Infraestrutura</p>
-      </div>
-    </div>
+            <div class="card">
+                <i class="fas fa-server icon"></i>
+                <h3>Sistemas & Infra</h3>
+                <div class="tags">
+                    <span>Windows Server</span>
+                    <span>Linux (Debian/Ubuntu)</span>
+                    <span>Redes</span>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <footer>
-      © 2026 • Portfólio Profissional de TI
+        <p>&copy; 2026 • Portfólio Profissional de TI</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
     </footer>
-  </div>
+
 </body>
 </html>
