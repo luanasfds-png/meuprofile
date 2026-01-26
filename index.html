@@ -9,241 +9,205 @@
     
     <style>
         :root {
-            --bg-color: #FFB6C1; /* Fundo Rosa Bebê */
+            --bg-color: #FFB6C1; /* Rosa Bebê */
             --card-bg: #2D2D2D;
-            --text-main: #FFFFFF;
+            --text-on-pink: #2D2D2D; /* Cor para texto sobre o rosa */
+            --text-on-dark: #FFFFFF; /* Cor para texto sobre o preto */
             --accent: #FFB6C1; 
-            --accent-hover: #f08080;
             --primary-font: 'Montserrat', sans-serif;
             --secondary-font: 'Open Sans', sans-serif;
         }
 
         body {
             background-color: var(--bg-color);
-            color: #2D2D2D; /* Texto geral escuro para ler no rosa */
+            color: var(--text-on-pink);
             font-family: var(--secondary-font);
             margin: 0;
+            padding: 0;
             line-height: 1.6;
-            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
+        /* HEADER - Mantemos escuro para as letras claras aparecerem */
         header {
             text-align: center;
-            padding: 120px 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.85)), 
+            padding: 100px 20px;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.9)), 
                         url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
-            border-bottom: 5px solid rgba(255, 255, 255, 0.2);
             color: white;
-            position: relative;
+            border-bottom: 4px solid rgba(255,255,255,0.1);
         }
 
         .nome-principal { 
             font-family: var(--primary-font);
-            font-size: 4rem; 
+            font-size: 3.5rem; 
             font-weight: 800;
             margin: 0;
-            line-height: 1;
-            background: linear-gradient(to right, #ffffff, #FFD1DC);
+            background: linear-gradient(to right, #ffffff, var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            text-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+            text-shadow: 0px 4px 10px rgba(0,0,0,0.5);
         }
 
         .cargo-ti { 
             font-family: var(--primary-font);
-            font-weight: 600;
-            font-size: 1.2rem; 
-            letter-spacing: 5px;
+            font-size: 1.1rem; 
+            letter-spacing: 4px;
             text-transform: uppercase;
-            margin: 15px 0 10px 0;
-            color: #FFB6C1; /* Rosa para brilhar no fundo escuro do header */
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            color: var(--accent);
+            margin: 10px 0;
+            display: block;
         }
 
-        /* RETÂNGULO PEQUENO AJUSTADO */
+        /* RETÂNGULO PEQUENO (Ajustado conforme imagem) */
         .subtitle { 
-            font-size: 0.85rem;
-            margin-top: 10px;
-            font-weight: 400;
-            background: rgba(255, 255, 255, 0.15);
+            font-size: 0.8rem;
+            background: rgba(255, 255, 255, 0.1);
             display: inline-block;
-            padding: 4px 18px;
+            padding: 5px 15px;
             border-radius: 50px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             color: #fff;
+            margin-top: 10px;
         }
 
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* CARD DE SOBRE (O retângulo escuro que aparece na sua imagem) */
         .about {
             background: var(--card-bg);
             color: white;
-            padding: 25px;
-            border-radius: 24px;
-            margin: -30px auto 30px;
-            max-width: 550px;
-            border: 1px solid rgba(255,182,193, 0.3);
+            padding: 30px;
+            border-radius: 20px;
+            margin: -60px auto 40px;
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
             position: relative;
-            z-index: 2;
+            z-index: 10;
         }
 
+        .about p { margin: 0; font-size: 1.05rem; }
         .about strong { color: var(--accent); }
 
+        /* GRID DE SERVIÇOS */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .card {
             background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
+            padding: 25px;
+            border-radius: 15px;
             color: white;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+            transition: 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: white;
-        }
-
-        .icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        h3 { 
-            font-family: var(--primary-font);
-            color: var(--accent);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
+        .card h3 { color: var(--accent); margin-top: 15px; }
+        
+        .icon { font-size: 2rem; color: var(--accent); }
 
         .tags span {
             background: rgba(255, 182, 193, 0.1);
             color: var(--accent);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 5px;
+            font-size: 0.75rem;
             border: 1px solid var(--accent);
-            font-weight: 600;
-            margin: 4px;
+            margin: 3px;
             display: inline-block;
         }
 
-        .whatsapp-link {
-            text-decoration: none;
-            color: white;
-            background: #25D366;
-            padding: 12px 25px;
-            border-radius: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 600;
-        }
-
+        /* RODAPÉ - Ajustado para aparecer no rosa */
         footer {
             text-align: center;
-            padding: 60px 0;
-            color: #2D2D2D; /* Texto escuro no fundo rosa */
-            font-weight: 600;
+            padding: 40px 20px;
+            color: var(--text-on-pink);
         }
 
-        .social-links a { 
-            color: #2D2D2D; 
-            margin: 0 15px; 
-            font-size: 1.8rem; 
+        .social-links a {
+            color: var(--text-on-pink);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .whatsapp-link {
+            background: #25D366;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 15px;
+            font-weight: bold;
         }
 
         @media (max-width: 600px) {
-            .nome-principal { font-size: 2.5rem; }
-            header { padding: 80px 20px; }
+            .nome-principal { font-size: 2.2rem; }
+            header { padding: 60px 20px; }
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="container">
-            <div class="nome-principal">Luana de Brito</div>
-            <h1 class="cargo-ti">Profissional de TI</h1>
-            <p class="subtitle">Especialista em Infraestrutura & Redes</p>
-        </div>
+        <div class="nome-principal">Luana de Brito</div>
+        <div class="cargo-ti">Profissional de TI</div>
+        <div class="subtitle">Especialista em Infraestrutura & Redes</div>
     </header>
 
-    <main class="container">
+    <div class="container">
         <section class="about">
-            <p>Profissional com mais de <strong>5 anos de experiência</strong> em Datacenters, suporte a ambientes críticos <strong>Linux/Windows</strong> e segurança da informação.</p>
+            <p>Mais de <strong>5 anos de experiência</strong> em Datacenters e suporte <strong>Linux/Windows</strong>.</p>
         </section>
 
         <div class="grid">
             <div class="card">
-                <i class="fas fa-user-graduate icon"></i>
-                <h3>Formação</h3>
-                <p>Graduada em Redes de Computadores pela <strong>FATEC Bauru</strong> e Técnica em TI pela <strong>ETEC</strong>.</p>
-            </div>
-
-            <div class="card">
                 <i class="fas fa-server icon"></i>
                 <h3>Infraestrutura</h3>
                 <div class="tags">
-                    <span>Windows Server</span>
-                    <span>Linux</span>
-                    <span>Virtualização</span>
-                    <span>Cloud</span>
+                    <span>Windows Server</span> <span>Linux</span> <span>Cloud</span>
                 </div>
             </div>
 
             <div class="card">
                 <i class="fas fa-code icon"></i>
-                <h3>Desenvolvimento Web</h3>
-                <p>Criação de sites modernos e responsivos.</p>
+                <h3>Dev Web</h3>
+                <p>Sites modernos e responsivos.</p>
                 <div class="tags">
-                    <span>HTML5 / CSS3</span>
-                    <span>WordPress</span>
+                    <span>HTML/CSS</span> <span>WordPress</span>
                 </div>
             </div>
 
             <div class="card">
-                <i class="fas fa-envelope icon"></i>
+                <i class="fas fa-phone icon"></i>
                 <h3>Contato</h3>
-                <p>Bauru-SP e projetos remotos.</p>
-                <a href="https://wa.me/5514996550883" target="_blank" class="whatsapp-link">
-                    <i class="fab fa-whatsapp"></i> (14) 99655-0883
+                <p>Bauru-SP e Remoto</p>
+                <a href="https://wa.me/5514996550883" class="whatsapp-link">
+                    <i class="fab fa-whatsapp"></i> WhatsApp
                 </a>
             </div>
         </div>
-    </main>
+    </div>
 
     <footer>
         <div class="social-links">
             <a href="#"><i class="fab fa-github"></i></a>
             <a href="#"><i class="fab fa-linkedin"></i></a>
         </div>
-        <p>&copy; 2026 • Luana de Brito • Bauru-SP</p>
+        <p>&copy; 2026 • Luana de Brito</p>
     </footer>
 
 </body>
 </html>
-
