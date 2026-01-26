@@ -1,268 +1,53 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Luana de Brito</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<header>
+    <div class="container">
+        <div class="nome-principal">Luana de Brito</div>
+        <h1 class="cargo-ti">Profissional de TI</h1>
+        <p class="subtitle">FATEC Bauru • Especialista em Infraestrutura & Redes</p>
+    </div>
+</header>
+
+<style>
+    /* Adicione ou atualize estas classes no seu <style> para garantir o alinhamento: */
     
-    <style>
-        :root {
-            --bg-color: #F8F9FA;
-            --card-bg: #2D2D2D;
-            --text-main: #FFFFFF;
-            --accent: #FFB6C1; /* Rosa Bebê */
-            --accent-hover: #f08080;
-            --primary-font: 'Montserrat', sans-serif;
-            --secondary-font: 'Open Sans', sans-serif;
-        }
+    header {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(135deg, #2F2F2F 0%, #1A1A1A 100%);
+        border-bottom: 5px solid var(--accent);
+        color: white;
+    }
 
-        body {
-            background-color: var(--bg-color);
-            color: #333;
-            font-family: var(--secondary-font);
-            margin: 0;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
+    .nome-principal { 
+        font-family: var(--primary-font);
+        font-size: 3.8rem; /* Aumentei um pouco para dar mais destaque */
+        font-weight: 800;
+        margin: 0;
+        line-height: 1;
+        background: linear-gradient(to right, #fff, var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    .cargo-ti { 
+        font-family: var(--primary-font);
+        font-weight: 600;
+        font-size: 1.2rem; 
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        margin: 15px 0 5px 0; /* Espaço maior acima para separar do nome */
+        color: var(--accent);
+    }
 
-        /* HEADER */
-        header {
-            text-align: center;
-            padding: 100px 20px 80px;
-            background: linear-gradient(135deg, #2F2F2F 0%, #1A1A1A 100%);
-            border-bottom: 5px solid var(--accent);
-            color: white;
-        }
+    .subtitle { 
+        font-size: 1.1rem; 
+        margin-top: 10px;
+        opacity: 0.8;
+        font-weight: 400;
+    }
 
-        /* EFEITO RESPONSIVO NO NOME */
-        .nome-principal { 
-            font-family: var(--primary-font);
-            font-size: 3.8rem; 
-            font-weight: 800;
-            margin: 0;
-            line-height: 1;
-            display: inline-block;
-            background: linear-gradient(to right, #fff, var(--accent), #fff);
-            background-size: 200% auto;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            cursor: pointer;
-        }
-
-        .nome-principal:hover {
-            transform: scale(1.1);
-            background-position: right center;
-            filter: drop-shadow(0 0 15px rgba(255, 182, 193, 0.6));
-        }
-
-        .cargo-ti { 
-            font-family: var(--primary-font);
-            font-weight: 600;
-            font-size: 1.2rem; 
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            margin: 20px 0 10px 0;
-            color: var(--accent);
-        }
-
-        .subtitle { 
-            font-size: 1.1rem; 
-            margin-top: 10px;
-            opacity: 0.8;
-            font-weight: 400;
-        }
-
-        /* SOBRE */
-        .about {
-            background: var(--card-bg);
-            color: white;
-            padding: 35px;
-            border-radius: 24px;
-            margin: -40px auto 40px;
-            max-width: 850px;
-            border: 1px solid rgba(255,182,193, 0.3);
-            text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
-        }
-
-        .about strong { color: var(--accent); }
-
-        /* GRID E CARDS */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin-bottom: 50px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            padding: 30px;
-            border-radius: 20px;
-            color: white;
-            transition: all 0.3s ease;
-            border: 1px solid transparent;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
-        }
-
-        .icon {
-            font-size: 2.5rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-        }
-
-        h3 { 
-            font-family: var(--primary-font);
-            color: var(--accent);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        /* TAGS */
-        .tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
-        .tags span {
-            background: rgba(255, 182, 193, 0.1);
-            color: var(--accent);
-            padding: 6px 14px;
-            border-radius: 8px;
-            font-size: 0.8rem;
-            border: 1px solid var(--accent);
-            font-weight: 600;
-        }
-
-        /* WHATSAPP */
-        .whatsapp-link {
-            text-decoration: none;
-            color: white;
-            border: 1px solid #25D366;
-            padding: 12px 25px;
-            border-radius: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
-            margin-top: 10px;
-            font-weight: 600;
-        }
-
-        .whatsapp-link:hover {
-            background: #25D366;
-            color: white;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
-        }
-
-        footer {
-            text-align: center;
-            padding: 80px 0 40px;
-            color: #666;
-            background: #f1f1f1;
-        }
-
-        .social-links { margin-bottom: 20px; }
-        .social-links a { 
-            color: #2D2D2D; 
-            margin: 0 15px; 
-            font-size: 1.8rem; 
-            transition: 0.3s;
-        }
-        .social-links a:hover { color: var(--accent-hover); }
-
-        /* RESPONSIVIDADE */
-        @media (max-width: 600px) {
-            .nome-principal { font-size: 2.5rem; }
-            .cargo-ti { font-size: 1rem; letter-spacing: 2px; }
-            header { padding: 60px 20px; }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <div class="container">
-            <div class="nome-principal">Luana de Brito</div>
-            <h1 class="cargo-ti">Profissional de TI</h1>
-            <p class="subtitle">FATEC Bauru • Especialista em Infraestrutura & Redes</p>
-        </div>
-    </header>
-
-    <main class="container">
-        <section class="about">
-            <p>Especialista com mais de <strong>5 anos de experiência</strong> em Datacenters, suporte avançado a ambientes críticos <strong>Linux/Windows</strong> e segurança da informação.</p>
-        </section>
-
-        <div class="grid">
-            <div class="card">
-                <i class="fas fa-user-graduate icon"></i>
-                <h3>Formação</h3>
-                <p>Graduada em Redes de Computadores pela <strong>FATEC Bauru</strong> e Técnica em TI pela <strong>ETEC</strong>.</p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-server icon"></i>
-                <h3>Infraestrutura</h3>
-                <div class="tags">
-                    <span>Windows Server</span>
-                    <span>Linux</span>
-                    <span>Virtualização</span>
-                    <span>AD/DNS/DHCP</span>
-                    <span>Cloud</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-code icon"></i>
-                <h3>Desenvolvimento Web</h3>
-                <p>Criação de sites modernos e responsivos, integrando design e performance técnica.</p>
-                <div class="tags">
-                    <span>HTML5 / CSS3</span>
-                    <span>WordPress</span>
-                    <span>Hospedagem</span>
-                    <span>Otimização</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-shield-alt icon"></i>
-                <h3>Segurança & Dados</h3>
-                <p>Gestão de Backup/Restore, Disaster Recovery e aplicação de diretrizes da <strong>LGPD</strong>.</p>
-            </div>
-
-            <div class="card">
-                <i class="fas fa-envelope icon"></i>
-                <h3>Contato</h3>
-                <p>Disponível para Bauru-SP e projetos remotos.</p>
-                <a href="https://wa.me/5514996550883" target="_blank" class="whatsapp-link">
-                    <i class="fab fa-whatsapp"></i> (14) 99655-0883
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <footer>
-        <div class="social-links">
-            <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-        </div>
-        <p>&copy; 2026 • Luana de Brito • Orgulhosamente de Bauru-SP</p>
-    </footer>
-
-</body>
-</html>
+    /* Ajuste para telas de celular */
+    @media (max-width: 600px) {
+        .nome-principal { font-size: 2.5rem; }
+        .cargo-ti { font-size: 1rem; letter-spacing: 2px; }
+    }
+</style>
