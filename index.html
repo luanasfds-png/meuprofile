@@ -33,23 +33,24 @@
             padding: 20px;
         }
 
-        /* HEADER COM IMAGEM E TRANSPARÊNCIA */
+        /* HEADER COM IMAGEM DE SERVIDORES E TRANSPARÊNCIA */
         header {
             text-align: center;
-            padding: 120px 20px;
-            /* Overlay escuro + Imagem de Datacenter Profissional */
-            background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), 
+            padding: 140px 20px;
+            /* Overlay gradiente para transparência + Imagem de Datacenter */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
                         url('https://images.unsplash.com/photo-1558494949-ef010cbdcc51?q=80&w=2000&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
             background-attachment: fixed; /* Efeito Parallax */
             border-bottom: 5px solid var(--accent);
             color: white;
+            position: relative;
         }
 
         .nome-principal { 
             font-family: var(--primary-font);
-            font-size: 3.8rem; 
+            font-size: 4rem; 
             font-weight: 800;
             margin: 0;
             line-height: 1;
@@ -57,18 +58,23 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             display: inline-block;
-            text-shadow: 0px 10px 20px rgba(0,0,0,0.3);
+            text-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .nome-principal:hover {
+            transform: scale(1.05);
         }
 
         .cargo-ti { 
             font-family: var(--primary-font);
             font-weight: 600;
-            font-size: 1.2rem; 
-            letter-spacing: 4px;
+            font-size: 1.3rem; 
+            letter-spacing: 5px;
             text-transform: uppercase;
-            margin: 15px 0 5px 0;
+            margin: 20px 0 10px 0;
             color: var(--accent);
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
         }
 
         .subtitle { 
@@ -78,11 +84,12 @@
             /* Efeito Glassmorphism para o subtítulo */
             background: rgba(255, 255, 255, 0.1);
             display: inline-block;
-            padding: 8px 25px;
+            padding: 10px 30px;
             border-radius: 50px;
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: #fff;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
 
         /* SOBRE */
@@ -91,11 +98,11 @@
             color: white;
             padding: 35px;
             border-radius: 24px;
-            margin: -40px auto 40px;
+            margin: -50px auto 40px; /* Sobe um pouco para sobrepor o header */
             max-width: 850px;
             border: 1px solid rgba(255,182,193, 0.3);
             text-align: center;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             position: relative;
             z-index: 2;
         }
@@ -190,9 +197,10 @@
 
         /* RESPONSIVIDADE */
         @media (max-width: 600px) {
-            .nome-principal { font-size: 2.5rem; }
+            .nome-principal { font-size: 2.8rem; }
             .cargo-ti { font-size: 1rem; letter-spacing: 2px; }
-            header { padding: 80px 20px; }
+            header { padding: 100px 20px; }
+            .about { margin-top: -30px; }
         }
     </style>
 </head>
@@ -202,13 +210,13 @@
         <div class="container">
             <div class="nome-principal">Luana de Brito</div>
             <h1 class="cargo-ti">Profissional de TI</h1>
-            <p class="subtitle"> Especialista em Infraestrutura & Redes</p>
+            <p class="subtitle">Especialista em Infraestrutura & Redes</p>
         </div>
     </header>
 
     <main class="container">
         <section class="about">
-            <p> Profissional com mais de <strong>5 anos de experiência</strong> em Datacenters, suporte a ambientes críticos <strong>Linux/Windows</strong> e segurança da informação.</p>
+            <p>Profissional com mais de <strong>5 anos de experiência</strong> em Datacenters, suporte a ambientes críticos <strong>Linux/Windows</strong> e segurança da informação.</p>
         </section>
 
         <div class="grid">
@@ -269,4 +277,3 @@
 
 </body>
 </html>
-
